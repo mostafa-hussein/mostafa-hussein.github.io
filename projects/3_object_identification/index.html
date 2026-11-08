@@ -1,0 +1,163 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Multimodal Object Identification at Warehouse Scale | Mostafa Hussein </title> <meta name="author" content="Mostafa Hussein"> <meta name="description" content="The perception model behind Amazon's Sparrow picking robot."> <meta name="keywords" content="robot learning, imitation learning, behavior cloning, VLA, flow matching, manipulation, robotics"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://mostafa-hussein.github.io/projects/3_object_identification/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Mostafa</span> Hussein </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Multimodal Object Identification at Warehouse Scale</h1> <p class="post-description">The perception model behind Amazon's Sparrow picking robot.</p> </header> <article> <p><strong>Amazon Robotics</strong> · 2022 – 2024 · Applied Scientist II</p> <p>A picking robot in a fulfillment center has to recognize which item it is holding, out of an open-ended catalog of products. The reference images for an item are often incomplete, and items arrive occluded, deformed, or in changed packaging.</p> <p>I developed a multimodal object-identification model that matches a camera crop against several partial reference sources at once: photos taken during fulfillment, the catalog image, and the catalog title text. A DINO vision transformer gives domain-invariant image embeddings, catalog titles are aligned to the same space with CLIP-style contrastive fine-tuning, and a gradient-boosted model fuses the per-source matches while tolerating missing sources.</p> <div class="row justify-content-sm-center"> <div class="col-sm-10 mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/projects/object-identification-480.webp 480w,/assets/img/projects/object-identification-800.webp 800w,/assets/img/projects/object-identification-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/projects/object-identification.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> </div> <div class="caption">Matching object segments in a bin against multiple partial reference sources.</div> <p>On ARMBench (190K+ objects) extended with these reference sources, the fused model identified 92–97% of objects across reference-coverage scenarios, holding up where nearest-neighbor matching lost precision. In production it shipped to Sparrow stations across U.S. fulfillment centers and raised identification accuracy from about 80% to 98.5%.</p> <p>Published at ICRA 2024 <a class="citation" href="#mitash2024scaling">(Mitash et al., 2024)</a>.</p> <p><strong>Tools:</strong> vision transformers · DINO · CLIP · contrastive learning · multimodal retrieval</p> </article> <h2>References</h2> <div class="publications"> <h2 class="bibliography">2024</h2> <ol class="bibliography"><li> <div class="row"> <div class="col col-sm-2 abbr"> <abbr class="badge rounded w-100">ICRA</abbr> <figure> <picture> <img src="/assets/img/publication_preview/mitash2024scaling.jpg" class="preview z-depth-1 rounded" width="100%" height="auto" alt="mitash2024scaling.jpg" data-zoomable loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> <div id="mitash2024scaling" class="col-sm-8"> <div class="title">Scaling Object-centric Robotic Manipulation with Multimodal Object Identification</div> <div class="author"> Chaitanya Mitash, <em>Mostafa Hussein</em>, Jeroen Vanbaar, Vikedo Terhuja, and Kapil D. Katyal </div> <div class="periodical"> <em>In 2024 IEEE International Conference on Robotics and Automation (ICRA)</em>, May 2024 </div> <div class="periodical"> </div> <div class="links"> <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a> <a href="https://doi.org/10.1109/ICRA57147.2024.10611181" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">DOI</a> <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a> <a href="https://cdn.amazon.science/14/74/bf8c4f5446b5ac4dd64d13e647ca/scaling-object-centric-robotic-manipulation-with-multimodal-object-identification.pdf" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a> </div> <div class="abstract hidden"> <p>Robotic manipulation is a key enabler for automation in the fulfillment logistics sector. Such robotic systems require perception and manipulation capabilities to handle a wide variety of objects. Existing systems either operate on a closed set of objects or perform object-agnostic manipulation which lacks the capability for deliberate and reliable manipulation at scale. Object identification (ID) unlocks the ability for large-scale, object-centric manipulation by mapping object segments to one of the previously seen objects from a database. Nevertheless, it is often limited by the availability of reference data or coverage for objects in a database. In this work, we propose to perform object identification with multiple reference databases, including images and text references, each with a different coverage and matching challenge. We propose a training strategy that tackles the challenges of learning domain-invariant image embeddings, image-text matching and fusing predictions from different sources. We perform experiments over a recent benchmark with over 190K+ unique objects, extend the dataset with the additional reference sources and propose an evaluation strategy that simulates coverage for different reference sources. Model trained with the proposed learning pipeline shows robust performance over a range of simulation experiments.</p> </div> <div class="bibtex hidden"> <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">mitash2024scaling</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Scaling Object-centric Robotic Manipulation with Multimodal Object Identification}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Mitash, Chaitanya and Hussein, Mostafa and Vanbaar, Jeroen and Terhuja, Vikedo and Katyal, Kapil D.}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{2024 IEEE International Conference on Robotics and Automation (ICRA)}</span><span class="p">,</span>
+  <span class="na">pages</span> <span class="p">=</span> <span class="s">{1913--1920}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2024}</span><span class="p">,</span>
+  <span class="na">month</span> <span class="p">=</span> <span class="nv">may</span><span class="p">,</span>
+  <span class="na">publisher</span> <span class="p">=</span> <span class="s">{IEEE}</span><span class="p">,</span>
+  <span class="na">doi</span> <span class="p">=</span> <span class="s">{10.1109/ICRA57147.2024.10611181}</span><span class="p">,</span>
+<span class="p">}</span></code></pre></figure> </div> </div> </div> </li></ol> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Mostafa Hussein. Built with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="external nofollow noopener">al-folio</a>, hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=8a920aa71ef9107988c632e9cec745ce"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-publications",
+          title: "publications",
+          description: "Newest first.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "Research projects and previous work.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "news-joined-amazon-robotics-as-an-applied-scientist-ii-working-on-perception-for-the-sparrow-picking-robot",
+          title: 'Joined Amazon Robotics as an Applied Scientist II, working on perception for the...',
+          description: "",
+          section: "News",},{id: "news-returned-to-unh-s-cognitive-assistive-robotics-lab-as-an-applied-scientist-working-on-flow-matching-policies-and-in-home-assistive-robots",
+          title: 'Returned to UNH’s Cognitive Assistive Robotics Lab as an Applied Scientist, working on...',
+          description: "",
+          section: "News",},{id: "news-joined-persona-ai-as-a-senior-deep-learning-manipulation-engineer-working-on-policy-learning-for-humanoid-robots",
+          title: 'Joined Persona AI as a Senior Deep Learning Manipulation Engineer, working on policy...',
+          description: "",
+          section: "News",},{id: "news-our-in-home-care-robot-for-people-with-dementia-was-featured-by-the-associated-press-and-the-story-also-ran-in-the-washington-post-the-los-angeles-times-and-the-boston-globe",
+          title: 'Our in-home care robot for people with dementia was featured by the Associated...',
+          description: "",
+          section: "News",},{id: "projects-policy-learning-for-industrial-humanoids",
+          title: 'Policy Learning for Industrial Humanoids',
+          description: "VLA models, data, and RL for dual-arm manipulation and whole-body control.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_humanoid_policy_learning/";
+            },},{id: "projects-raha-tech-robot-care-at-home-for-people-with-dementia",
+          title: 'Raha Tech: Robot Care at Home for People with Dementia',
+          description: "Co-founder. An AI care platform that helps people with dementia stay in their homes.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_raha_tech/";
+            },},{id: "projects-multimodal-object-identification-at-warehouse-scale",
+          title: 'Multimodal Object Identification at Warehouse Scale',
+          description: "The perception model behind Amazon&#39;s Sparrow picking robot.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_object_identification/";
+            },},{id: "projects-trajectory-consistent-flow-matching",
+          title: 'Trajectory-Consistent Flow Matching',
+          description: "Flow-matching policies that stay on track over long-horizon tasks.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_trajectory_flow_matching/";
+            },},{id: "projects-care-bt-assistive-robots-in-real-homes",
+          title: 'CaRE-BT: Assistive Robots in Real Homes',
+          description: "Care protocols turned into behavior trees, deployed in people&#39;s homes for months.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_care_bt/";
+            },},{id: "projects-robust-behavior-cloning-from-imperfect-demonstrations",
+          title: 'Robust Behavior Cloning from Imperfect Demonstrations',
+          description: "Learning multi-step tasks when some human demonstrations are wrong.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5_robust_behavior_cloning/";
+            },},{id: "projects-learning-interaction-policies-from-demonstrations",
+          title: 'Learning Interaction Policies from Demonstrations',
+          description: "Inverse RL for human–robot interaction, applied to autism therapy.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/6_interaction_irl/";
+            },},{id: "projects-teaching-a-robot-to-write-in-english-and-arabic",
+          title: 'Teaching a Robot to Write in English and Arabic',
+          description: "Learning perceptual and motion primitives from demonstration.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/7_motion_primitives/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%6D%6F%73%74%61%66%61.%68%75%73%73%65%69%6E@%75%6E%68.%65%64%75", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=pVzfRJQAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/mostafa-hussein", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/mostafa-hussein-phd", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Robust Behavior Cloning from Imperfect Demonstrations | Mostafa Hussein </title> <meta name="author" content="Mostafa Hussein"> <meta name="description" content="Learning multi-step tasks when some human demonstrations are wrong."> <meta name="keywords" content="robot learning, imitation learning, behavior cloning, VLA, flow matching, manipulation, robotics"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://mostafa-hussein.github.io/projects/5_robust_behavior_cloning/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Mostafa</span> Hussein </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Robust Behavior Cloning from Imperfect Demonstrations</h1> <p class="post-description">Learning multi-step tasks when some human demonstrations are wrong.</p> </header> <article> <p><strong>University of New Hampshire (CARL)</strong> · 2018 – 2022 · PhD research</p> <p>Behavior cloning assumes every demonstration is correct, but real human demonstrations include mistakes and even unsafe actions, and a cloned policy copies them. My PhD thesis, <em>Robust Behavior Cloning for Multi-Step Sequential Task Learning by Robots</em>, addresses this.</p> <p><strong>R-MaxEnt</strong> (NeurIPS 2020 workshop, IROS 2021) learns a policy by matching feature expectations under the maximum-entropy principle while learning a weight for each demonstration. A min-max formulation drives the weight of any demonstration that disagrees with the rest toward zero, with no simulator and only a handful of demonstrations. In Mountain-Car and Acrobot it kept its accuracy as adversarial demonstrations were added, while behavior cloning, GAIL, and IRL baselines degraded. On a real ABB YuMi tea-making task it stayed accurate until adversarial demonstrations outnumbered correct ones.</p> <div class="row justify-content-sm-center"> <div class="col-sm-10 mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/projects/robust-behavior-cloning-480.webp 480w,/assets/img/projects/robust-behavior-cloning-800.webp 800w,/assets/img/projects/robust-behavior-cloning-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/projects/robust-behavior-cloning.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> </div> <div class="caption">Kinesthetic demonstrations of the tea-making task on the ABB YuMi.</div> <p><strong>Detecting incorrect visual demonstrations</strong> (CoRL 2022) moves the idea to raw video. Each video is split into sub-tasks, temporally aware visual features are extracted per segment, and a min-max entropy problem gives low weight to videos whose sub-task sequence is inconsistent with the rest, such as forgetting the tea bag. On a tea-making dataset and on 50-Salads it caught every incorrect video, even when they made up about 40% of the demonstrations.</p> <p><strong>A hierarchical approach</strong> (manuscript) learns the high-level sub-task policy from video over only the visual features that best capture the task’s temporal structure, while the YuMi learns each sub-task’s motor skill kinesthetically. Temporally grounded features reached 100% policy accuracy from 15 tea-making demonstrations, where spatial-only features needed 30.</p> <p>Published at CoRL 2022, IROS 2021, and a NeurIPS 2020 workshop <a class="citation" href="#hussein2022detecting">(Hussein &amp; Begum, 2022; Hussein et al., 2021; Hussein et al., 2020; Hussein et al., 2021)</a>. The full story is in my PhD thesis <a class="citation" href="#hussein2023robust">(Hussein, 2023)</a>. Code: <a href="https://github.com/mostafa-hussein/max-ent" rel="external nofollow noopener" target="_blank">R-MaxEnt</a>, <a href="https://github.com/AssistiveRoboticsUNH/hierarchical_learner" rel="external nofollow noopener" target="_blank">hierarchical learner</a>.</p> <div class="row justify-content-sm-center"> <div class="col-sm-10 mt-3 mt-md-0"> <figure> <video src="/assets/video/iros2021.mp4" class="img-fluid rounded z-depth-1" width="auto" height="auto" controls=""></video> </figure> </div> </div> <div class="caption">IROS 2021 video: robust behavior cloning with adversarial demonstration detection.</div> <div class="row justify-content-sm-center"> <div class="col-sm-10 mt-3 mt-md-0"> <figure> <video src="/assets/video/iros2021-talk.mp4" class="img-fluid rounded z-depth-1" width="auto" height="auto" controls=""></video> </figure> </div> </div> <div class="caption">IROS 2021 talk (15 min).</div> <p><strong>Tools:</strong> behavior cloning · maximum-entropy methods · learning from demonstration · ABB YuMi</p> </article> <h2>References</h2> <div class="publications"> <h2 class="bibliography">2023</h2> <ol class="bibliography"><li> <div class="row"> <div class="col col-sm-2 abbr"> <abbr class="badge rounded w-100">PhD Thesis</abbr> </div> <div id="hussein2023robust" class="col-sm-8"> <div class="title">Robust Behavior Cloning for Multi-step Sequential Task Learning by Robots</div> <div class="author"> <em>Mostafa Hussein</em> </div> <div class="periodical"> <em>University of New Hampshire</em>, 2023 </div> <div class="periodical"> </div> <div class="links"> <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a> <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a> <a href="https://scholars.unh.edu/cgi/viewcontent.cgi?article=3788&amp;context=dissertation" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a> <a href="https://scholars.unh.edu/dissertation/2787" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Website</a> </div> <div class="abstract hidden"> <p>This research is about learning high-level policies of multi-step sequential (MSS) tasks – such as activities of daily living – from demonstrations in a sample efficient manner. This research does not assume access to a simulator or an expert to provide more demonstrations. Learning a task policy in such a setting using state-of-the-art end-to-end approaches is sample inefficient due to a reliance on deep learning frameworks, which are known to require a large amount of data. Besides that, most imitation learning frameworks in robotics assume that a domain expert’s demonstration always contains a correct way of doing the task. Despite its theoretical convenience, this assumption has limited practical value in real-world imitation learning. There are many reasons for an expert in the real world to provide demonstrations that may contain incorrect or potentially unsafe ways of doing a task. To that end, my work proposes a novel behavior cloning framework for imitation learning that can autonomously detect and remove incorrect demonstrations while learning the task policy. The proposed framework, which we term Robust Maximum Entropy behavior cloning(R-MaxEnt-BC), learns a stochastic model that maps states to actions. In doing so, R-MaxEnt-BC solves a min-max problem that leverages the entropy of the model to assign weights to different demonstrations while assigning low weights to incorrect ones. Our empirical results show that R-MaxEnt-BC outperforms the existing imitation learning approaches in real and simulated robotics tasks.</p> </div> <div class="bibtex hidden"> <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@phdthesis</span><span class="p">{</span><span class="nl">hussein2023robust</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Hussein, Mostafa}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Robust Behavior Cloning for Multi-step Sequential Task Learning by Robots}</span><span class="p">,</span>
+  <span class="na">school</span> <span class="p">=</span> <span class="s">{University of New Hampshire}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
+  <span class="na">url</span> <span class="p">=</span> <span class="s">{https://scholars.unh.edu/dissertation/2787}</span><span class="p">,</span>
+<span class="p">}</span></code></pre></figure> </div> </div> </div> </li></ol> <h2 class="bibliography">2022</h2> <ol class="bibliography"><li> <div class="row"> <div class="col col-sm-2 abbr"> <abbr class="badge rounded w-100">CoRL</abbr> <figure> <picture> <img src="/assets/img/publication_preview/hussein2022detecting.jpg" class="preview z-depth-1 rounded" width="100%" height="auto" alt="hussein2022detecting.jpg" data-zoomable loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> <div id="hussein2022detecting" class="col-sm-8"> <div class="title">Detecting Incorrect Visual Demonstrations for Improved Policy Learning</div> <div class="author"> <em>Mostafa Hussein</em> and Momotaz Begum </div> <div class="periodical"> <em>In Proceedings of The 6th Conference on Robot Learning</em>, Dec 2022 </div> <div class="periodical"> </div> <div class="links"> <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a> <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a> <a href="https://proceedings.mlr.press/v205/hussein23a/hussein23a.pdf" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a> </div> <div class="abstract hidden"> <p>Learning tasks only from raw video demonstrations is the current state of the art in robotics visual imitation learning research. The implicit assumption here is that all video demonstrations show an optimal/sub-optimal way of performing the task. What if that is not true? What if one or more videos show a wrong way of executing the task? A task policy learned from such incorrect demonstrations can be potentially unsafe for robots and humans. It is therefore important to analyze the video demonstrations for correctness before handing them over to the policy learning algorithm. This is a challenging task, especially due to the very large state space. This paper proposes a framework to autonomously detect incorrect video demonstrations of sequential tasks consisting of several sub-tasks. We analyze the demonstration pool to identify video(s) for which task-features follow a ‘disruptive’ sequence. We analyze entropy to measure this disruption and – through solving a minmax problem – assign poor weights to incorrect videos. We evaluated the framework with two real-world video datasets: our custom-designed Tea-Making with a YuMi robot and the publicly available 50-Salads. Experimental results show the effectiveness of the proposed framework in detecting incorrect video demonstrations even when they make up 40% of the demonstration set. We also show that various state-of-the-art imitation learning algorithms learn a better policy when incorrect demonstrations are discarded from the training pool.</p> </div> <div class="bibtex hidden"> <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">hussein2022detecting</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Detecting Incorrect Visual Demonstrations for Improved Policy Learning}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Hussein, Mostafa and Begum, Momotaz}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of The 6th Conference on Robot Learning}</span><span class="p">,</span>
+  <span class="na">series</span> <span class="p">=</span> <span class="s">{Proceedings of Machine Learning Research}</span><span class="p">,</span>
+  <span class="na">volume</span> <span class="p">=</span> <span class="s">{205}</span><span class="p">,</span>
+  <span class="na">pages</span> <span class="p">=</span> <span class="s">{1817--1827}</span><span class="p">,</span>
+  <span class="na">editor</span> <span class="p">=</span> <span class="s">{Liu, Karen and Kulic, Dana and Ichnowski, Jeff}</span><span class="p">,</span>
+  <span class="na">publisher</span> <span class="p">=</span> <span class="s">{PMLR}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2022}</span><span class="p">,</span>
+  <span class="na">month</span> <span class="p">=</span> <span class="nv">dec</span><span class="p">,</span>
+  <span class="na">url</span> <span class="p">=</span> <span class="s">{https://proceedings.mlr.press/v205/hussein23a.html}</span><span class="p">,</span>
+<span class="p">}</span></code></pre></figure> </div> </div> </div> </li></ol> <h2 class="bibliography">2021</h2> <ol class="bibliography"> <li> <div class="row"> <div class="col col-sm-2 abbr"> <abbr class="badge rounded w-100">IROS</abbr> <figure> <picture> <img src="/assets/img/publication_preview/hussein2021robust.jpg" class="preview z-depth-1 rounded" width="100%" height="auto" alt="hussein2021robust.jpg" data-zoomable loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> <div id="hussein2021robust" class="col-sm-8"> <div class="title">Robust Behavior Cloning with Adversarial Demonstration Detection</div> <div class="author"> <em>Mostafa Hussein</em>, Brendan Crowe, Madison Clark-Turner, Paul Gesel, Marek Petrik, and Momotaz Begum </div> <div class="periodical"> <em>In 2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>, Sep 2021 </div> <div class="periodical"> </div> <div class="links"> <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a> <a href="https://doi.org/10.1109/IROS51168.2021.9636203" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">DOI</a> <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a> <a href="https://par.nsf.gov/servlets/purl/10309120" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a> <a class="abstract btn btn-sm z-depth-0" role="button">Video</a> <a href="https://github.com/mostafa-hussein/max-ent" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a> </div> <div class="abstract hidden"> <p>Imitation learning (IL) frameworks in robotics typically assume that a domain expert’s demonstration always contains a correct way of doing the task. Despite its theoretical convenience, this assumption has limited practical values for an IL-powered robot in real world. There are many reasons for an expert in the real world to provide demonstrations that may contain incorrect or potentially unsafe way of doing a task. In order for IL-powered robots to work in the real world, IL frameworks need to detect such adversarial demonstrations and not learn from them. This paper proposes an IL framework that can autonomously detect and remove adversarial demonstrations, if they exist in the demonstration set, as it directly learns a task policy from the expert. The proposed framework that we term Robust Maximum Entropy behavior cloning (R-MaxEnt) learns a stochastic model that maps states to actions. In doing so, R-MaxEnt solves a minmax problem that leverages the entropy of the model to assign weights to different demonstrations while assigning poor weights to adversarial samples. Our empirical results show that R-MaxEnt outperforms the existing IL approaches in both real and simulated robotics tasks.</p> </div> <div class="bibtex hidden"> <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">hussein2021robust</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Robust Behavior Cloning with Adversarial Demonstration Detection}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Hussein, Mostafa and Crowe, Brendan and Clark-Turner, Madison and Gesel, Paul and Petrik, Marek and Begum, Momotaz}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}</span><span class="p">,</span>
+  <span class="na">pages</span> <span class="p">=</span> <span class="s">{7858--7864}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2021}</span><span class="p">,</span>
+  <span class="na">month</span> <span class="p">=</span> <span class="nv">sep</span><span class="p">,</span>
+  <span class="na">publisher</span> <span class="p">=</span> <span class="s">{IEEE}</span><span class="p">,</span>
+  <span class="na">doi</span> <span class="p">=</span> <span class="s">{10.1109/IROS51168.2021.9636203}</span><span class="p">,</span>
+<span class="p">}</span></code></pre></figure> </div> <div class="abstract hidden"> <div style="text-align: center;"> <figure> <video src="/assets/video/iros2021.mp4" class="img-fluid rounded z-depth-1" width="auto" height="auto" controls></video> </figure> </div> </div> </div> </div> </li> <li> <div class="row"> <div class="col col-sm-2 abbr"> <abbr class="badge rounded w-100">Manuscript</abbr> <figure> <picture> <img src="/assets/img/publication_preview/hussein2021hierarchical.jpg" class="preview z-depth-1 rounded" width="100%" height="auto" alt="hussein2021hierarchical.jpg" data-zoomable loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> <div id="hussein2021hierarchical" class="col-sm-8"> <div class="title">A Hierarchical Approach for Learning Multi-Step Sequential Tasks from Video Demonstrations</div> <div class="author"> <em>Mostafa Hussein</em>, Madison Clark-Turner, and Momotaz Begum </div> <div class="periodical"> 2021 </div> <div class="periodical"> Manuscript </div> <div class="links"> <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a> <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a> <a href="https://www.cs.unh.edu/%7Embegum/pub/BC_ITR_2022.pdf" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a> <a class="abstract btn btn-sm z-depth-0" role="button">Video</a> <a href="https://github.com/AssistiveRoboticsUNH/hierarchical_learner" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a> </div> <div class="abstract hidden"> <p>We are interested in learning the high-level policy of multi-step sequential (MSS) tasks, such as activities of daily living, from video demonstrations. Videos of MSS tasks are typically long in duration and exhibit large feature variance, especially when captured in non-engineered settings. Learning task policy from such videos using state-of-the-art end-to-end approaches is sample inefficient due to a reliance on pixel-level information. Understanding the unique temporal structures of MSS tasks can make policy learning easier and sample efficient. However, understanding this temporal structure requires analyzing the entire content of the video or a task which is a complex and under-explored area in the current literature. We propose a hierarchical solution to this problem where i) an automated feature selection process extrapolates temporally grounded task-relevant features from the video and then ii) a stochastic policy learning model learns a feature-constrained task policy. The proposed model is sample efficient (trained using less than one hour of demonstration data) as a result of substituting selected temporally-grounded features for pixel-level information. We demonstrate the efficacy of our proposed framework by teaching a YuMi robot a long-duration, multi-step task – tea making – from videos. We present results on sample efficiency and robustness against data loss. We also compare our performance to that of a state-of-the-art approach of task learning from real visual demonstrations.</p> </div> <div class="bibtex hidden"> <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@unpublished</span><span class="p">{</span><span class="nl">hussein2021hierarchical</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{A Hierarchical Approach for Learning Multi-Step Sequential Tasks from Video Demonstrations}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Hussein, Mostafa and Clark-Turner, Madison and Begum, Momotaz}</span><span class="p">,</span>
+  <span class="na">note</span> <span class="p">=</span> <span class="s">{Manuscript}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2021}</span><span class="p">,</span>
+  <span class="na">url</span> <span class="p">=</span> <span class="s">{https://www.cs.unh.edu/%7Embegum/pub/BC_ITR_2022.pdf}</span><span class="p">,</span>
+<span class="p">}</span></code></pre></figure> </div> <div class="abstract hidden"> <div style="text-align: center;"> <figure> <video src="/assets/video/hierarchical-tea-making.mp4" class="img-fluid rounded z-depth-1" width="auto" height="auto" controls></video> </figure> </div> </div> </div> </div> </li> </ol> <h2 class="bibliography">2020</h2> <ol class="bibliography"><li> <div class="row"> <div class="col col-sm-2 abbr"> <abbr class="badge rounded w-100">NeurIPS-W</abbr> <figure> <picture> <img src="/assets/img/publication_preview/hussein2021maxent.jpg" class="preview z-depth-1 rounded" width="100%" height="auto" alt="hussein2021maxent.jpg" data-zoomable loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> <div id="hussein2021maxent" class="col-sm-8"> <div class="title">Robust Maximum Entropy Behavior Cloning</div> <div class="author"> <em>Mostafa Hussein</em>, Brendan Crowe, Marek Petrik, and Momotaz Begum </div> <div class="periodical"> <em>In NeurIPS 2020 3rd Robot Learning Workshop: Grounding Machine Learning Development in the Real World</em>, Dec 2020 </div> <div class="periodical"> </div> <div class="links"> <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a> <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a> <a href="https://arxiv.org/pdf/2101.01251" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a> <a href="https://github.com/mostafa-hussein/max-ent" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a> </div> <div class="abstract hidden"> <p>Imitation learning (IL) algorithms use expert demonstrations to learn a specific task. Most of the existing approaches assume that all expert demonstrations are reliable and trustworthy, but what if there exist some adversarial demonstrations among the given data-set? This may result in poor decision-making performance. We propose a novel general frame-work to directly generate a policy from demonstrations that autonomously detect the adversarial demonstrations and exclude them from the data set. At the same time, it’s sample, time-efficient, and does not require a simulator. To model such adversarial demonstration we propose a min-max problem that leverages the entropy of the model to assign weights for each demonstration. This allows us to learn the behavior using only the correct demonstrations or a mixture of correct demonstrations.</p> </div> <div class="bibtex hidden"> <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">hussein2021maxent</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Robust Maximum Entropy Behavior Cloning}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Hussein, Mostafa and Crowe, Brendan and Petrik, Marek and Begum, Momotaz}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{NeurIPS 2020 3rd Robot Learning Workshop: Grounding Machine Learning Development in the Real World}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2020}</span><span class="p">,</span>
+  <span class="na">month</span> <span class="p">=</span> <span class="nv">dec</span><span class="p">,</span>
+  <span class="na">archiveprefix</span> <span class="p">=</span> <span class="s">{arXiv}</span><span class="p">,</span>
+  <span class="na">primaryclass</span> <span class="p">=</span> <span class="s">{cs.LG}</span><span class="p">,</span>
+  <span class="na">url</span> <span class="p">=</span> <span class="s">{https://arxiv.org/abs/2101.01251}</span><span class="p">,</span>
+<span class="p">}</span></code></pre></figure> </div> </div> </div> </li></ol> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Mostafa Hussein. Built with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="external nofollow noopener">al-folio</a>, hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=8a920aa71ef9107988c632e9cec745ce"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-publications",
+          title: "publications",
+          description: "Newest first.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "Research projects and previous work.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "news-joined-amazon-robotics-as-an-applied-scientist-ii-working-on-perception-for-the-sparrow-picking-robot",
+          title: 'Joined Amazon Robotics as an Applied Scientist II, working on perception for the...',
+          description: "",
+          section: "News",},{id: "news-returned-to-unh-s-cognitive-assistive-robotics-lab-as-an-applied-scientist-working-on-flow-matching-policies-and-in-home-assistive-robots",
+          title: 'Returned to UNH’s Cognitive Assistive Robotics Lab as an Applied Scientist, working on...',
+          description: "",
+          section: "News",},{id: "news-joined-persona-ai-as-a-senior-deep-learning-manipulation-engineer-working-on-policy-learning-for-humanoid-robots",
+          title: 'Joined Persona AI as a Senior Deep Learning Manipulation Engineer, working on policy...',
+          description: "",
+          section: "News",},{id: "news-our-in-home-care-robot-for-people-with-dementia-was-featured-by-the-associated-press-and-the-story-also-ran-in-the-washington-post-the-los-angeles-times-and-the-boston-globe",
+          title: 'Our in-home care robot for people with dementia was featured by the Associated...',
+          description: "",
+          section: "News",},{id: "projects-policy-learning-for-industrial-humanoids",
+          title: 'Policy Learning for Industrial Humanoids',
+          description: "VLA models, data, and RL for dual-arm manipulation and whole-body control.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_humanoid_policy_learning/";
+            },},{id: "projects-raha-tech-robot-care-at-home-for-people-with-dementia",
+          title: 'Raha Tech: Robot Care at Home for People with Dementia',
+          description: "Co-founder. An AI care platform that helps people with dementia stay in their homes.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_raha_tech/";
+            },},{id: "projects-multimodal-object-identification-at-warehouse-scale",
+          title: 'Multimodal Object Identification at Warehouse Scale',
+          description: "The perception model behind Amazon&#39;s Sparrow picking robot.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_object_identification/";
+            },},{id: "projects-trajectory-consistent-flow-matching",
+          title: 'Trajectory-Consistent Flow Matching',
+          description: "Flow-matching policies that stay on track over long-horizon tasks.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_trajectory_flow_matching/";
+            },},{id: "projects-care-bt-assistive-robots-in-real-homes",
+          title: 'CaRE-BT: Assistive Robots in Real Homes',
+          description: "Care protocols turned into behavior trees, deployed in people&#39;s homes for months.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_care_bt/";
+            },},{id: "projects-robust-behavior-cloning-from-imperfect-demonstrations",
+          title: 'Robust Behavior Cloning from Imperfect Demonstrations',
+          description: "Learning multi-step tasks when some human demonstrations are wrong.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5_robust_behavior_cloning/";
+            },},{id: "projects-learning-interaction-policies-from-demonstrations",
+          title: 'Learning Interaction Policies from Demonstrations',
+          description: "Inverse RL for human–robot interaction, applied to autism therapy.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/6_interaction_irl/";
+            },},{id: "projects-teaching-a-robot-to-write-in-english-and-arabic",
+          title: 'Teaching a Robot to Write in English and Arabic',
+          description: "Learning perceptual and motion primitives from demonstration.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/7_motion_primitives/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%6D%6F%73%74%61%66%61.%68%75%73%73%65%69%6E@%75%6E%68.%65%64%75", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=pVzfRJQAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/mostafa-hussein", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/mostafa-hussein-phd", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
