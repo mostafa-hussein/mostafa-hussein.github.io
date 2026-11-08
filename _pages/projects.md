@@ -1,11 +1,11 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
 description: Research projects and previous work.
 nav: true
-nav_order: 2
-display_categories: [research, industry] # each project sets `category:` to one of these
+nav_order: 1
+display_categories: [industry, research] # each project sets `category:` to one of these; shown in this order
 horizontal: false
 ---
 

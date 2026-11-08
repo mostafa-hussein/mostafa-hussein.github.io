@@ -1,13 +1,12 @@
 ---
-layout: page
+layout: cv
 permalink: /cv/
 title: CV
 nav: true
 nav_order: 3
+cv_format: rendercv
+resume_pdf: /assets/pdf/Mostafa_Hussein_Resume.pdf
+description: Experience, education, skills, and selected publications. The PDF is the full resume.
 ---
 
-<!-- To post the resume again: add assets/pdf/cv.pdf, link it here, and add cv_pdf back to _data/socials.yml. -->
-
-For my full resume, please email me at <a href="mailto:{{ site.data.socials.email }}?subject=Resume%20request">{{ site.data.socials.email }}</a>.
-
-My [publications](/publications/) and [projects](/projects/) pages list my research and previous work.
+<!-- Content lives in _data/cv.yml. The PDF is assets/pdf/Mostafa_Hussein_Resume.pdf. -->

@@ -1,0 +1,35 @@
+---
+# Local copy of the theme's main stylesheet (al_folio_core). It exists so we can
+# set the accent colors below and load _sass/_custom.scss; keep the rest in sync
+# with the theme after an upgrade.
+---
+@charset "utf-8";
+
+@use "sass:math";
+@use "sass:string";
+
+// Site colors. The theme calls its accent "purple"; we point it at a blue.
+@use "variables" with (
+  $max-content-width: {{ site.max_width | default: "930px" }},
+  $purple-color: #1f5fa8,
+  $cyan-color: #7fb2f0,
+  $black-color: #1b2330
+);
+
+@use "themes";
+@use "layout";
+
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+// Our additions: home page, project cards, small fixes.
+@use "custom";

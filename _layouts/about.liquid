@@ -1,0 +1,93 @@
+---
+layout: default
+---
+{% comment %}
+  Home page: introduction with photo and contact, featured projects, selected
+  publications, recent news, contact. Replaces the theme's about layout.
+  Content comes from _pages/about.md; featured projects are the _projects
+  files with `featured: true`.
+{% endcomment %}
+<div class="post home">
+  <header class="post-header">
+    <h1 class="post-title font-weight-bold">{{ site.first_name }} {{ site.last_name }}</h1>
+    <p class="desc">{{ page.subtitle }}</p>
+  </header>
+
+  <article>
+    <div class="home-hero">
+      <div class="hero-text">
+        {{ content }}
+        <div class="hero-actions">
+          <a class="btn-home primary" href="{{ '/projects/' | relative_url }}">View projects</a>
+          <a class="btn-home" href="{{ '/publications/' | relative_url }}">Publications</a>
+          <a class="btn-home" href="{{ '/cv/' | relative_url }}">CV</a>
+          <a class="btn-home" href="mailto:{{ site.data.socials.email }}">Email me</a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        {% if page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% include figure.liquid loading="eager" path=profile_image_path class="img-fluid z-depth-1 rounded" alt="Portrait of Mostafa Hussein" cache_bust=true %}
+        {% endif %}
+        <div class="hero-contact">
+          {% if page.profile.more_info %}
+            <div class="hero-info">{{ page.profile.more_info }}</div>
+          {% endif %}
+          <a class="hero-email" href="mailto:{{ site.data.socials.email }}">
+            <i class="fa-solid fa-envelope"></i>
+            {{ site.data.socials.email }}
+          </a>
+          <div class="contact-icons">{% social_links %}</div>
+        </div>
+      </div>
+    </div>
+
+    {% assign featured = site.projects | where: 'featured', true | sort: 'importance' %}
+    {% if featured.size > 0 %}
+      <section class="home-section projects">
+        <h2>
+          Featured projects
+          <a class="more" href="{{ '/projects/' | relative_url }}">All projects &rarr;</a>
+        </h2>
+        <div class="row row-cols-1 row-cols-md-3">
+          {% for project in featured %}
+            {% include projects.liquid %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if page.selected_papers %}
+      <section class="home-section">
+        <h2>
+          Selected publications
+          <a class="more" href="{{ '/publications/' | relative_url }}">All publications &rarr;</a>
+        </h2>
+        {% include selected_papers.liquid %}
+      </section>
+    {% endif %}
+
+    {% if page.announcements and page.announcements.enabled %}
+      <section class="home-section">
+        <h2>
+          Recent news
+          <a class="more" href="{{ '/news/' | relative_url }}">All news &rarr;</a>
+        </h2>
+        {% include news.liquid limit=true %}
+      </section>
+    {% endif %}
+
+    <section class="home-section home-contact" id="contact">
+      <h2>Contact</h2>
+      <p>
+        {{ site.contact_note }}
+        Write to <a href="mailto:{{ site.data.socials.email }}">{{ site.data.socials.email }}</a>
+        for collaborations, talks, or questions about my work.
+      </p>
+      <div class="social">
+        <div class="contact-icons">{% social_links %}</div>
+      </div>
+    </section>
+  </article>
+</div>

@@ -1,0 +1,174 @@
+# Web CV, rendered by the theme's CV plugin on /cv/ (RenderCV format).
+# The PDF resume in assets/pdf/ is maintained separately; keep the two in sync.
+cv:
+  name: Mostafa Hussein
+  label: Senior Deep Learning Manipulation Engineer, Persona AI · Co-founder, Raha Tech
+  email: mostafa.hussein@unh.edu
+  website: https://mostafa-hussein.github.io
+  summary: >-
+    Robot learning researcher with a PhD in robotics and 10+ years across research and production.
+    I build visuomotor policies for long-horizon manipulation (imitation learning, DAgger, residual
+    and sample-efficient RL, flow matching, and vision-language-action models) together with the data
+    pipelines, evaluation protocols, and deployment loops that make them hold up on real robots.
+    Shipped a production perception model to Amazon fulfillment centers, led multi-month in-home robot
+    deployments in NIH-funded trials, and now lead continual policy improvement for humanoid
+    manipulation at Persona AI. First author at ICRA, IROS, and CoRL.
+
+  sections:
+    Experience:
+      - company: Persona AI
+        position: Senior Deep Learning Manipulation Engineer
+        location: Houston, TX
+        start_date: 2026-05
+        end_date: present
+        highlights:
+          - Lead policy learning for dual-arm manipulation and whole-body control on Franka arms and
+            humanoid robots, for long-horizon industrial tasks that need high success rates.
+          - Build the continual-improvement loop for deployed vision-language-action policies (GR00T,
+            π0 family) with targeted fine-tuning on failures, experience replay, DAgger-style on-policy
+            corrections, and residual reinforcement learning on top of a frozen base policy.
+          - Define how policies are evaluated (success rate, sample efficiency, trajectory length, motion
+            smoothness, cycle time) on a fixed rollout panel, and built the LeRobot data pipeline and
+            offline evaluation harness behind it.
+      - company: University of New Hampshire, Cognitive Assistive Robotics Lab (CARL)
+        position: Applied Scientist II
+        location: Durham, NH
+        start_date: 2025-01
+        end_date: 2026-04
+        highlights:
+          - Co-advised Trajectory-Consistent Flow Matching (IROS 2026), which closes the gap between
+            pointwise training and the integrated trajectory at inference. On real robots it reached 70%
+            and 60% success on two long-horizon tasks where Diffusion Policy and Consistency-FM baselines
+            scored 0%, and 100% on precision tool placement on a Boston Dynamics Spot.
+          - Led the development and deployment of autonomous assistive robots in four private homes for
+            1 to 6 months each (NIH-funded trials). Designed the ROS 2, Nav2, and behavior-tree autonomy
+            stack (CaRE-BT, ICSR 2025) with multi-camera tracking, activity and face recognition; 500+
+            scheduled care interventions over six months in the field; co-authored the co-design study
+            of the trials (IJERPH 2026).
+          - Co-founded Raha Tech to turn the platform into a product; co-inventor on a pending U.S. patent.
+      - company: Amazon Robotics
+        position: Applied Scientist II
+        location: Boston, MA
+        start_date: 2022-09
+        end_date: 2024-12
+        highlights:
+          - Delivered the production object-identification model for the Sparrow picking robot.
+            Self-supervised ViT embeddings (DINO) with CLIP-style image-text alignment handle incomplete
+            reference images, occlusion, deformation, and packaging changes (ICRA 2024).
+          - Deployed across Sparrow stations in U.S. fulfillment centers, raising identification accuracy
+            from 80% to 98.5%.
+      - company: University of New Hampshire, Cognitive Assistive Robotics Lab (CARL)
+        position: Research Assistant
+        location: Durham, NH
+        start_date: 2017-08
+        end_date: 2022-09
+        highlights:
+          - Developed Robust Maximum-Entropy Behavior Cloning, which detects and down-weights adversarial
+            demonstrations so robots can learn multi-step tasks from imperfect human data (CoRL 2022,
+            IROS 2021, NeurIPS-W 2020); validated on an ABB YuMi tea-making task.
+          - Designed inverse reinforcement learning in POMDPs to learn interaction policies from
+            demonstrations (ICRA 2019), run autonomously on a NAO robot in robot-mediated interventions
+            for children with autism.
+          - "Internships: Amazon Robotics AI (2021, deep learning for perception and manipulation); MERL
+            (2021, contact models in physics engines for robotic transfer learning); UNH RL and
+            Robustness Lab (2020, robust imitation learning)."
+      - company: Assiut University
+        position: Research and Teaching Assistant
+        location: Assiut, Egypt
+        start_date: 2011-09
+        end_date: 2017-06
+        highlights:
+          - Built a ROS learning-from-demonstration stack (Gaussian-mixture motion primitives chosen by
+            variational Bayes, motif discovery) that taught a NAO robot to write in English and Arabic
+            (ICMA 2017, IEA/AIE 2015).
+
+    Education:
+      - institution: University of New Hampshire
+        area: Computer Science (Robotics)
+        degree: PhD
+        location: Durham, NH
+        start_date: 2017-08
+        end_date: 2023-05
+        highlights:
+          - "Thesis: Robust Behavior Cloning for Multi-Step Sequential Task Learning by Robots.
+            Advisor: Prof. Momotaz Begum."
+      - institution: Assiut University
+        area: Electrical Engineering (Computer and Control)
+        degree: MSc
+        location: Assiut, Egypt
+        start_date: 2011-09
+        end_date: 2016-06
+        highlights:
+          - Top of class.
+      - institution: Assiut University
+        area: Electrical Engineering (Computer and Control)
+        degree: BSc
+        location: Assiut, Egypt
+        start_date: 2005-09
+        end_date: 2010-06
+        highlights:
+          - Top of class.
+
+    Skills:
+      - name: Robot learning
+        keywords:
+          - VLA models (GR00T, π0 family, OpenVLA)
+          - generative policies (flow matching, Diffusion Policy, DP3)
+          - imitation learning (BC, robust LfD, DAgger)
+          - RL (residual, sample-efficient, online and offline)
+          - continual learning
+          - policy evaluation and motion-quality metrics
+      - name: ML infrastructure
+        keywords:
+          - PyTorch
+          - multi-GPU distributed training
+          - training multi-billion-parameter models
+          - LeRobot datasets
+          - MCAP and ROS bag data pipelines
+          - dataset curation
+          - Weights & Biases
+          - Docker, Linux, Git
+      - name: Perception
+        keywords:
+          - vision transformers and CNNs
+          - PointNet and 3D point clouds
+          - depth sensing
+          - self-supervised and contrastive learning (DINO)
+      - name: Robotics and software
+        keywords:
+          - Python, C++
+          - ROS 2, Nav2, behavior trees
+          - teleoperation data collection
+          - multi-camera fusion
+          - Jetson edge deployment
+          - Franka FR3, humanoids, Stretch 3, YuMi, NAO
+          - MuJoCo, Isaac Sim and Isaac Lab
+
+    Patents:
+      - bullet: >-
+          M. Begum, S. Arthanat, D. LaRoche, **M. Hussein**, O. Ghattas, M. Akash, M. Alam.
+          *Systems, Devices, and Methods for Autonomous Robotic Caregiving Assistance.*
+          U.S. Patent Application No. 19/797,285, filed September 2026. Patent pending.
+
+    Selected Publications:
+      - bullet: >-
+          R. Ahmed, S. Nag, M. Akash, **M. Hussein**, M. Begum. Trajectory-Consistent Flow Matching
+          for Robust Visuomotor Policy Learning. *IROS 2026*.
+      - bullet: >-
+          O. Ghattas, **M. Hussein**, M. Alam, M. Akash, S. Arthanat, D. LaRoche, M. Begum. CaRE-BT:
+          An Embodied Planning Framework for In-Home Assistive Robots. *ICSR 2025*.
+      - bullet: >-
+          C. Mitash, **M. Hussein**, J. van Baar, V. Terhuja, K. Katyal. Scaling Object-centric Robotic
+          Manipulation with Multimodal Object Identification. *ICRA 2024*.
+      - bullet: >-
+          **M. Hussein**, M. Begum. Detecting Incorrect Visual Demonstrations for Improved Policy
+          Learning. *CoRL 2022*.
+      - bullet: >-
+          **M. Hussein**, B. Crowe, M. Clark-Turner, M. Petrik, M. Begum. Robust Behavior Cloning with
+          Adversarial Demonstration Detection. *IROS 2021*.
+      - bullet: >-
+          **M. Hussein**, M. Begum, M. Petrik. Inverse Reinforcement Learning of Interaction Dynamics
+          from Demonstrations. *ICRA 2019*.
+      - bullet: >-
+          Full list on the [publications page](/publications/) and
+          [Google Scholar](https://scholar.google.com/citations?user=pVzfRJQAAAAJ).
