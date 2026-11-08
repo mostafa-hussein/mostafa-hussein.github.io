@@ -1,0 +1,5 @@
+# Optional: give a venue badge (the `abbr` field in papers.bib) a link and color.
+#
+# "ICRA":
+#   url: https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra
+#   color: "#00369f"

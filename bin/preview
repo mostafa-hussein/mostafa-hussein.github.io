@@ -1,0 +1,12 @@
+#!/bin/bash
+# Preview the site at http://localhost:8080 (needs Docker).
+# Content edits show up on refresh. After editing _config.yml, stop (Ctrl-C) and run again.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+docker run --rm -it --name personal-website-preview \
+  -u "$(id -u):$(id -g)" -e HOME=/tmp \
+  -p 127.0.0.1:8080:8080 -p 127.0.0.1:35729:35729 \
+  -v "$PWD":/srv/jekyll -w /srv/jekyll \
+  amirpourmand/al-folio:latest \
+  bundle exec jekyll serve --host 0.0.0.0 --port 8080 --livereload --force_polling --destination /tmp/_site

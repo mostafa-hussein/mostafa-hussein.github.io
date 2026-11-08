@@ -1,0 +1,235 @@
+---
+---
+
+% One entry per paper; the site sorts by year. Built from DBLP/publisher BibTeX
+% plus these site-only fields (delete the ones you don't have):
+%
+%   abbr     = short venue badge, e.g. {ICRA}, {CoRL}
+%   selected = {true} to feature the paper on the home page
+%   preview  = teaser image file name in assets/img/publication_preview/
+%   pdf      = open copy (arXiv, PMLR, ...) or a file name in assets/pdf/
+%   html     = publisher page (DOI link)
+%   video    = /assets/video/<file>.mp4 (plays on the page) or a YouTube embed URL
+%   code / website = full URLs
+%   abstract = shown when the reader clicks "Abs"
+%   bibtex_show = {true} to show a "Bib" button with the citation
+%
+% Your own name is bolded automatically (set in _config.yml under scholar:).
+
+@inproceedings{ahmed2026trajectory,
+  author    = {Riad Ahmed and Sujosh Nag and Moniruzzaman Akash and Mostafa Hussein and Momotaz Begum},
+  title     = {Trajectory-Consistent Flow Matching for Robust Visuomotor Policy Learning},
+  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year      = {2026},
+  abbr        = {IROS},
+  abstract    = {Flow matching policies learn continuous velocity fields that transport noise to actions, enabling fast deterministic inference for robot manipulation. However, standard training optimizes a pointwise velocity objective while inference requires numerical integration of that field -- a mismatch that causes compounding trajectory errors. We propose four complementary remedies: (1) auxiliary rectified flow velocity regression that provides uniform temporal supervision across the full time interval; (2) multi-step trajectory consistency training that supervises the integrated displacement of the velocity field over trajectory segments, directly closing the train-inference gap; (3) velocity field regularization that enforces temporal smoothness, preventing oscillations that destabilize integration; and (4) fourth-order Runge-Kutta (RK4) inference that reduces global discretization error by orders of magnitude over Euler methods. Critically, these components are not independently sufficient -- RK4 without a smooth velocity field fails, and smoothness without trajectory-level supervision still drifts, as our ablation study confirms. We further pair these with a dual-view 3D point cloud encoder using two independent PointNet encoders for complementary spatial perception. On four real-robot tasks across a Franka arm and a Boston Dynamics Spot, our method achieves 70% and 60% overall success on two long-horizon multi-phase tasks where both baselines score 0%, and reaches 100% on precision tool placement. Three MetaWorld simulation tasks confirm consistent improvements, validating that trajectory-level supervision is essential for reliable policy execution.},
+  pdf         = {https://arxiv.org/pdf/2605.08511v1},
+  preview     = {ahmed2026trajectory.jpg},
+  bibtex_show = {true},
+  selected    = {true}
+}
+
+@misc{begum2026systems,
+  author       = {Begum, Momotaz and Arthanat, Sajay and LaRoche, Dain and Hussein, Mostafa and Ghattas, Ola and Akash, Moniruzzaman and Alam, Marzan},
+  title        = {Systems, Devices, and Methods for Autonomous Robotic Caregiving Assistance},
+  note         = {U.S. Patent Application No. 19/797,285, filed Sept. 3, 2026. Patent pending},
+  year         = {2026},
+  abbr        = {Patent},
+  bibtex_show = {true}
+}
+
+@article{arthanat2026systematic,
+  author    = {Sajay Arthanat and Jing Wang and Dain LaRoche and Heather Fritz and Rosanne DiZazzo-Miller and Mostafa Hussein and Ola Ghattas and Moniruzzaman Akash and Momotaz Begum},
+  title     = {Systematic Co-Design of Artificial Intelligence-Enabled Innovations for Healthy Aging: A Demonstration Study Involving Socially Assistive Robots for Dementia Care},
+  journal   = {International Journal of Environmental Research and Public Health},
+  volume    = {23},
+  number    = {8},
+  pages     = {1019},
+  year      = {2026},
+  publisher = {MDPI},
+  doi       = {10.3390/ijerph23081019},
+  abbr        = {IJERPH},
+  abstract    = {Artificial intelligence-enabled technologies offer new opportunities to support healthy aging and the long-term care needs of older adults. However, inclusive practices are paramount to ensuring that accessibility, usability, privacy, and equitable use are factored into the design and deployment of these emerging technologies. This article explores the role of co-design in health technology development and highlights the application of three methodological tools—the NIH Stage Model for Behavioral Intervention Development, the Unified Theory of Acceptance and Use of Technology, and Goal Attainment Scaling—to create a smart-home-based socially assistive robot (SAR) for the care of individuals living with Alzheimer’s disease and related dementias (ADRD). Ten participants (five caregiver–care recipient dyads) from an ongoing mixed-methods pilot feasibility study trialed the SAR in their homes for 1–6 months, with the robot personalized to their daily functioning, home layout, and caregiving needs. Qualitative analysis of monthly interviews derived themes pertaining to technical design, care protocol design, training management, and complementary care. These themes, combined with goal attainment analysis, offered several insights that allowed us to iteratively scale and refine the technology tailored to ADRD care. The study offers a practical framework for future co-design efforts aimed at enhancing the adoption of AI-enabled health technologies among older adults.},
+  pdf         = {https://www.mdpi.com/1660-4601/23/8/1019/pdf},
+  preview     = {arthanat2026systematic.jpg},
+  bibtex_show = {true}
+}
+
+@inproceedings{ghattas2025carebt,
+  author    = {Ola Ghattas and Mostafa Hussein and Marzan Alam and Moniruzzaman Akash and Sajay Arthanat and Dain LaRoche and Momotaz Begum},
+  title     = {{CaRE-BT}: An Embodied Planning Framework for In-Home Assistive Robots},
+  booktitle = {Social Robotics + AI (ICSR+AI 2025)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {16133},
+  pages     = {152--164},
+  publisher = {Springer},
+  year      = {2025},
+  doi       = {10.1007/978-981-95-2398-6_12},
+  abbr        = {ICSR},
+  bibtex_show = {true}
+}
+
+@article{begum2025technical,
+  author  = {Momotaz Begum and Ola Ghattas and Marzan Alam and Moniruzzaman Akash and Noushad Sojib and Mostafa Hussein},
+  title   = {Technical Framework for a Care Robot},
+  journal = {Innovation in Aging},
+  volume  = {9},
+  number  = {Supplement_2},
+  pages   = {igaf122.1545},
+  note    = {Conference abstract},
+  year    = {2025},
+  doi     = {10.1093/geroni/igaf122.1545},
+  abbr        = {Innov. Aging},
+  abstract    = {A robot that cares for older adults in their home is tasked with making reliable sequential decisions subjected to uncertainties of human behaviors and environments. This is highly non-trivial due to a plethora of challenges involved with real-time processing of perception-action pipeline. The state of the art in AI robotics offers efficient tools to solve individual problems that may arise along this pipeline. An integrated solution, however, is still non-existent. We will present our ongoing work on developing an open-source control architecture that implements the entire perception-action pipeline for home care robots in a platform agnostic manner. The core of this architecture is a lightweight ROS2-based AI planner that can generate task plans executable by any robot – equipped with appropriate actuators – while sensing the current state of the environment and the care recipient (ROS: Robot Operating System; AI: Artificial Intelligence). Tasks typically included care services – e.g., reminding an older adult to take the medication or encouraging him/her to perform physical exercise – defined based on the needs of a care recipient. We integrate state of the art algorithms in robotics and computer vision – such as navigation, tracking, face recognition, natural language processing, etc. – in an innovative way with this lightweight AI planner to realize real-time planning and execution of a wide range of services that are critical for older adults to age gracefully in their own homes. We will report some data from our ongoing field studies.},
+  bibtex_show = {true}
+}
+
+@inproceedings{mitash2024scaling,
+  title     = {Scaling Object-centric Robotic Manipulation with Multimodal Object Identification},
+  author    = {Mitash, Chaitanya and Hussein, Mostafa and Vanbaar, Jeroen and Terhuja, Vikedo and Katyal, Kapil D.},
+  booktitle = {2024 IEEE International Conference on Robotics and Automation (ICRA)},
+  pages     = {1913--1920},
+  year      = {2024},
+  month     = may,
+  publisher = {IEEE},
+  doi       = {10.1109/ICRA57147.2024.10611181},
+  abbr        = {ICRA},
+  abstract    = {Robotic manipulation is a key enabler for automation in the fulfillment logistics sector. Such robotic systems require perception and manipulation capabilities to handle a wide variety of objects. Existing systems either operate on a closed set of objects or perform object-agnostic manipulation which lacks the capability for deliberate and reliable manipulation at scale. Object identification (ID) unlocks the ability for large-scale, object-centric manipulation by mapping object segments to one of the previously seen objects from a database. Nevertheless, it is often limited by the availability of reference data or coverage for objects in a database. In this work, we propose to perform object identification with multiple reference databases, including images and text references, each with a different coverage and matching challenge. We propose a training strategy that tackles the challenges of learning domain-invariant image embeddings, image-text matching and fusing predictions from different sources. We perform experiments over a recent benchmark with over 190K+ unique objects, extend the dataset with the additional reference sources and propose an evaluation strategy that simulates coverage for different reference sources. Model trained with the proposed learning pipeline shows robust performance over a range of simulation experiments.},
+  pdf         = {https://cdn.amazon.science/14/74/bf8c4f5446b5ac4dd64d13e647ca/scaling-object-centric-robotic-manipulation-with-multimodal-object-identification.pdf},
+  preview     = {mitash2024scaling.jpg},
+  bibtex_show = {true},
+  selected    = {true}
+}
+
+@phdthesis{hussein2023robust,
+  author = {Mostafa Hussein},
+  title  = {Robust Behavior Cloning for Multi-step Sequential Task Learning by Robots},
+  school = {University of New Hampshire},
+  year   = {2023},
+  url    = {https://scholars.unh.edu/dissertation/2787},
+  abbr        = {PhD Thesis},
+  abstract    = {This research is about learning high-level policies of multi-step sequential (MSS) tasks – such as activities of daily living – from demonstrations in a sample efficient manner. This research does not assume access to a simulator or an expert to provide more demonstrations. Learning a task policy in such a setting using state-of-the-art end-to-end approaches is sample inefficient due to a reliance on deep learning frameworks, which are known to require a large amount of data. Besides that, most imitation learning frameworks in robotics assume that a domain expert’s demonstration always contains a correct way of doing the task. Despite its theoretical convenience, this assumption has limited practical value in real-world imitation learning. There are many reasons for an expert in the real world to provide demonstrations that may contain incorrect or potentially unsafe ways of doing a task. To that end, my work proposes a novel behavior cloning framework for imitation learning that can autonomously detect and remove incorrect demonstrations while learning the task policy. The proposed framework, which we term Robust Maximum Entropy behavior cloning(R-MaxEnt-BC), learns a stochastic model that maps states to actions. In doing so, R-MaxEnt-BC solves a min-max problem that leverages the entropy of the model to assign weights to different demonstrations while assigning low weights to incorrect ones. Our empirical results show that R-MaxEnt-BC outperforms the existing imitation learning approaches in real and simulated robotics tasks.},
+  pdf         = {https://scholars.unh.edu/cgi/viewcontent.cgi?article=3788&context=dissertation},
+  website     = {https://scholars.unh.edu/dissertation/2787},
+  bibtex_show = {true}
+}
+
+@inproceedings{hussein2022detecting,
+  title     = {Detecting Incorrect Visual Demonstrations for Improved Policy Learning},
+  author    = {Hussein, Mostafa and Begum, Momotaz},
+  booktitle = {Proceedings of The 6th Conference on Robot Learning},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {205},
+  pages     = {1817--1827},
+  editor    = {Liu, Karen and Kulic, Dana and Ichnowski, Jeff},
+  publisher = {PMLR},
+  year      = {2022},
+  month     = dec,
+  url       = {https://proceedings.mlr.press/v205/hussein23a.html},
+  abbr        = {CoRL},
+  abstract    = {Learning tasks only from raw video demonstrations is the current state of the art in robotics visual imitation learning research. The implicit assumption here is that all video demonstrations show an optimal/sub-optimal way of performing the task. What if that is not true? What if one or more videos show a wrong way of executing the task? A task policy learned from such incorrect demonstrations can be potentially unsafe for robots and humans. It is therefore important to analyze the video demonstrations for correctness before handing them over to the policy learning algorithm. This is a challenging task, especially due to the very large state space. This paper proposes a framework to autonomously detect incorrect video demonstrations of sequential tasks consisting of several sub-tasks. We analyze the demonstration pool to identify video(s) for which task-features follow a ‘disruptive’ sequence. We analyze entropy to measure this disruption and – through solving a minmax problem – assign poor weights to incorrect videos. We evaluated the framework with two real-world video datasets: our custom-designed Tea-Making with a YuMi robot and the publicly available 50-Salads. Experimental results show the effectiveness of the proposed framework in detecting incorrect video demonstrations even when they make up 40% of the demonstration set. We also show that various state-of-the-art imitation learning algorithms learn a better policy when incorrect demonstrations are discarded from the training pool.},
+  pdf         = {https://proceedings.mlr.press/v205/hussein23a/hussein23a.pdf},
+  preview     = {hussein2022detecting.jpg},
+  bibtex_show = {true},
+  selected    = {true}
+}
+
+@inproceedings{hussein2021robust,
+  title     = {Robust Behavior Cloning with Adversarial Demonstration Detection},
+  author    = {Hussein, Mostafa and Crowe, Brendan and Clark-Turner, Madison and Gesel, Paul and Petrik, Marek and Begum, Momotaz},
+  booktitle = {2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages     = {7858--7864},
+  year      = {2021},
+  month     = sep,
+  publisher = {IEEE},
+  doi       = {10.1109/IROS51168.2021.9636203},
+  abbr        = {IROS},
+  abstract    = {Imitation learning (IL) frameworks in robotics typically assume that a domain expert's demonstration always contains a correct way of doing the task. Despite its theoretical convenience, this assumption has limited practical values for an IL-powered robot in real world. There are many reasons for an expert in the real world to provide demonstrations that may contain incorrect or potentially unsafe way of doing a task. In order for IL-powered robots to work in the real world, IL frameworks need to detect such adversarial demonstrations and not learn from them. This paper proposes an IL framework that can autonomously detect and remove adversarial demonstrations, if they exist in the demonstration set, as it directly learns a task policy from the expert. The proposed framework that we term Robust Maximum Entropy behavior cloning (R-MaxEnt) learns a stochastic model that maps states to actions. In doing so, R-MaxEnt solves a minmax problem that leverages the entropy of the model to assign weights to different demonstrations while assigning poor weights to adversarial samples. Our empirical results show that R-MaxEnt outperforms the existing IL approaches in both real and simulated robotics tasks.},
+  pdf         = {https://par.nsf.gov/servlets/purl/10309120},
+  code        = {https://github.com/mostafa-hussein/max-ent},
+  video       = {/assets/video/iros2021.mp4},
+  preview     = {hussein2021robust.jpg},
+  bibtex_show = {true},
+  selected    = {true}
+}
+
+@unpublished{hussein2021hierarchical,
+  title  = {A Hierarchical Approach for Learning Multi-Step Sequential Tasks from Video Demonstrations},
+  author = {Hussein, Mostafa and Clark-Turner, Madison and Begum, Momotaz},
+  note   = {Manuscript},
+  year   = {2021},
+  url    = {https://www.cs.unh.edu/%7Embegum/pub/BC_ITR_2022.pdf},
+  abbr        = {Manuscript},
+  abstract    = {We are interested in learning the high-level policy of multi-step sequential (MSS) tasks, such as activities of daily living, from video demonstrations. Videos of MSS tasks are typically long in duration and exhibit large feature variance, especially when captured in non-engineered settings. Learning task policy from such videos using state-of-the-art end-to-end approaches is sample inefficient due to a reliance on pixel-level information. Understanding the unique temporal structures of MSS tasks can make policy learning easier and sample efficient. However, understanding this temporal structure requires analyzing the entire content of the video or a task which is a complex and under-explored area in the current literature. We propose a hierarchical solution to this problem where i) an automated feature selection process extrapolates temporally grounded task-relevant features from the video and then ii) a stochastic policy learning model learns a feature-constrained task policy. The proposed model is sample efficient (trained using less than one hour of demonstration data) as a result of substituting selected temporally-grounded features for pixel-level information. We demonstrate the efficacy of our proposed framework by teaching a YuMi robot a long-duration, multi-step task – tea making – from videos. We present results on sample efficiency and robustness against data loss. We also compare our performance to that of a state-of-the-art approach of task learning from real visual demonstrations.},
+  pdf         = {https://www.cs.unh.edu/%7Embegum/pub/BC_ITR_2022.pdf},
+  code        = {https://github.com/AssistiveRoboticsUNH/hierarchical_learner},
+  video       = {/assets/video/hierarchical-tea-making.mp4},
+  preview     = {hussein2021hierarchical.jpg},
+  bibtex_show = {true}
+}
+
+@inproceedings{hussein2021maxent,
+  title         = {Robust Maximum Entropy Behavior Cloning},
+  author        = {Hussein, Mostafa and Crowe, Brendan and Petrik, Marek and Begum, Momotaz},
+  booktitle     = {NeurIPS 2020 3rd Robot Learning Workshop: Grounding Machine Learning Development in the Real World},
+  year          = {2020},
+  month         = dec,
+  eprint        = {2101.01251},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2101.01251},
+  abbr        = {NeurIPS-W},
+  abstract    = {Imitation learning (IL) algorithms use expert demonstrations to learn a specific task. Most of the existing approaches assume that all expert demonstrations are reliable and trustworthy, but what if there exist some adversarial demonstrations among the given data-set? This may result in poor decision-making performance. We propose a novel general frame-work to directly generate a policy from demonstrations that autonomously detect the adversarial demonstrations and exclude them from the data set. At the same time, it's sample, time-efficient, and does not require a simulator. To model such adversarial demonstration we propose a min-max problem that leverages the entropy of the model to assign weights for each demonstration. This allows us to learn the behavior using only the correct demonstrations or a mixture of correct demonstrations.},
+  pdf         = {https://arxiv.org/pdf/2101.01251},
+  code        = {https://github.com/mostafa-hussein/max-ent},
+  preview     = {hussein2021maxent.jpg},
+  bibtex_show = {true}
+}
+
+@inproceedings{hussein2019inverse,
+  author    = {Mostafa Hussein and Momotaz Begum and Marek Petrik},
+  title     = {Inverse Reinforcement Learning of Interaction Dynamics from Demonstrations},
+  booktitle = {2019 International Conference on Robotics and Automation (ICRA)},
+  address   = {Montreal, QC, Canada},
+  pages     = {2267--2274},
+  publisher = {IEEE},
+  year      = {2019},
+  doi       = {10.1109/ICRA.2019.8793867},
+  abbr        = {ICRA},
+  abstract    = {This paper presents a framework to learn the reward function underlying high-level sequential tasks from demonstrations. The purpose of reward learning, in the context of learning from demonstration (LfD), is to generate policies that mimic the demonstrator's policies, thereby enabling imitation learning. We focus on a human-robot interaction (HRI) domain where the goal is to learn and model structured interactions between a human and a robot. Such interactions can be modeled as a partially observable Markov decision process (POMDP) where the partial observability is caused by uncertainties associated with the ways humans respond to different stimuli. The key challenge in finding a good policy in such a POMDP is determining the reward function that was observed by the demonstrator. Existing inverse reinforcement learning (IRL) methods for POMDPs are computationally very expensive and the problem is not well understood. In comparison, IRL algorithms for Markov decision process (MDP) are well defined and computationally efficient. We propose an approach of reward function learning for high-level sequential tasks from human demonstrations where the core idea is to reduce the underlying POMDP to an MDP and apply any efficient MDP-IRL algorithm. Our extensive experiments suggest that the reward function learned this way generates POMDP policies that mimic the policies of the demonstrator well.},
+  pdf         = {https://par.nsf.gov/servlets/purl/10109213},
+  video       = {/assets/video/icra2019.mp4},
+  preview     = {hussein2019inverse.jpg},
+  bibtex_show = {true},
+  selected    = {true}
+}
+
+@inproceedings{hussein2017cold,
+  author    = {Mostafa Hussein and Yasser Mohammad and Samia A. Ali},
+  title     = {{COLD}: A {ROS} package for continuous Learning from Demonstration teaching a robot to write},
+  booktitle = {2017 IEEE International Conference on Mechatronics and Automation (ICMA)},
+  address   = {Takamatsu, Japan},
+  pages     = {651--657},
+  publisher = {IEEE},
+  year      = {2017},
+  doi       = {10.1109/ICMA.2017.8015893},
+  abbr        = {ICMA},
+  abstract    = {Learning From Demonstration (LfD) is an important area of research in robotics because it provides the means for skill transfer from humans to robots with no reliance on any specific technical skills of the human teacher. There are many approaches to LfD. Most available methods assume the existence of clear boundaries between different demonstrations. Less research focuses on techniques that can be used by the robot to learn from continuous streams of data that provide not only planned but also unplanned demonstrations. This paper reports an integrated framework to tackle this problem using the Robot Operating System (ROS) that is modular, scalable, easily adaptable, and robot-independent. We also report a study applying this method to teach robots how to write in both English and Arabic by just watching people writing short reports. Not only can the learner write words that exist in the training data but novel words based on the basic strokes learned from the demonstrations. The system was applied to teaching both a physical NAO robot and a Parallel robot simulator and evaluations demonstrate the effectiveness of the proposed framework in this task.},
+  bibtex_show = {true}
+}
+
+@inproceedings{hussein2015learning,
+  author    = {Mostafa Hussein and Yasser Mohammad and Samia A. Ali},
+  title     = {Learning from Demonstration Using Variational Bayesian Inference},
+  booktitle = {Current Approaches in Applied Artificial Intelligence: 28th International Conference on Industrial, Engineering and Other Applications of Applied Intelligent Systems (IEA/AIE 2015)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {9101},
+  pages     = {371--381},
+  publisher = {Springer},
+  address   = {Seoul, South Korea},
+  year      = {2015},
+  doi       = {10.1007/978-3-319-19066-2_36},
+  abbr        = {IEA/AIE},
+  abstract    = {Learning from demonstration (LFD) is an active area of research in robotics. There are many approaches to LFD. One of the most widely used approaches is the combination of Gaussian Mixture Model learning for modeling and Gaussian Mixture Regression for behavior generation (GMM/GMR) due to its advantages including easy learning using Expectation Maximization and the simplicity of serializing learned behaviors as well as the ability to model internal correlations and constraints within the task. A critical parameter that affects the accuracy of learned behavior in GMM/GMR is the number of components in the mixture. A handful of approaches for selecting this number can be found in the literature including classical model selection methods like Bayesian Information Criteria and Akaike Information Criteria and more advanced methods including Dirichlet Process modeling. These approaches are either wasteful of computational resources or hard to implement. This paper introduces a LfD approach which uses GMM with a variational Bayesian Inference (VB) approach to select the number of Gaussians that best fit the data. The proposed method is compared to classical model selection approaches and a recently proposed symbolization based method and is shown to provide an appropriate balance between execution speed and model accuracy.},
+  bibtex_show = {true}
+}

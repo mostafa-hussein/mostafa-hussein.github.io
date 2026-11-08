@@ -1,0 +1,6 @@
+# Optional: link co-author names in your publication list to their pages.
+# Key is the last name in lowercase, as it appears in papers.bib.
+#
+# "smith":
+#   - firstname: ["Jane", "J."]
+#     url: https://janesmith.github.io
